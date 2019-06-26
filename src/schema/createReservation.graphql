@@ -1,0 +1,22 @@
+type Mutation {
+  createReservation(data: ReservationCreateInput!): Reservation!
+}
+
+interface Node {
+  id: ID!
+}
+
+type Reservation implements Node {
+  id: ID!
+  name: String!
+  hotelName: String!
+  arrivalDate: String!
+  departureDate: String!
+}
+
+input ReservationCreateInput {
+  name: String!
+  hotelName: String!
+  arrivalDate: String!
+  departureDate: String!
+}
